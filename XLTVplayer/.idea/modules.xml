@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/src_lib/EventBus/EventBus.iml" filepath="$PROJECT_DIR$/src_lib/EventBus/EventBus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThunderTVPlayer.iml" filepath="$PROJECT_DIR$/ThunderTVPlayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src_lib/msKit/mslib/mslib.iml" filepath="$PROJECT_DIR$/src_lib/msKit/mslib/mslib.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.kankan.player.view.AnimateLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal"
+                                            android:id="@+id/root"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/left_ll"
+        android:layout_width="@dimen/remote_popdialog_left_width"
+        android:layout_height="@dimen/remote_popdialog_left_height"
+        android:orientation="vertical"
+        android:background="@drawable/remote_alert_bg"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="@dimen/remote_popdialog_iv_width"
+                android:layout_height="@dimen/remote_popdialog_iv_heigth"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/left_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/remote_popdialog_tv_margintop"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/remote_popdialog_tv_text_size"
+                android:textColor="#c9d4d9"
+                android:textStyle="bold"
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/right_ll"
+        android:layout_width="@dimen/remote_popdialog_left_width"
+        android:layout_height="@dimen/remote_popdialog_left_height"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/remote_popdialog_innermargin"
+        android:background="@drawable/remote_alert_bg"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="@dimen/remote_popdialog_iv_width"
+                android:layout_height="@dimen/remote_popdialog_iv_heigth"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:id="@+id/right_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/remote_popdialog_tv_margintop"
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/remote_popdialog_tv_text_size"
+                android:textColor="#c9d4d9"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.kankan.player.view.AnimateLinearLayout>

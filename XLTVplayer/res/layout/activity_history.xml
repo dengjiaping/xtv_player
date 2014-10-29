@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_main">
+
+    <include
+            android:id="@+id/titlebar"
+            layout="@layout/top_bar_common"/>
+
+    <com.kankan.player.view.MaxScrollListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/history_list_margin_top"
+            android:layout_below="@id/titlebar"
+            android:divider="#00000000"
+            android:dividerHeight="0dp"/>
+
+    <RelativeLayout
+            android:id="@+id/empty_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/empty_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/empty_tddownload"
+                android:layout_centerHorizontal="true"
+                />
+
+        <TextView
+                android:id="@+id/empty_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/empty_icon_iv"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="15dp"
+                android:text="还没有观看过任何视频，观看过后就能在这里发现他们"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/cover_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:focusable="false"
+            >
+
+        <RelativeLayout
+                android:id="@+id/video_rl"
+                android:layout_width="@dimen/history_video_item_cover_width"
+                android:layout_height="@dimen/history_video_item_cover_height"
+                android:duplicateParentState="true"
+                android:background="@drawable/bg_focus"
+                android:padding="@dimen/history_video_item_cover_padding_left"
+                >
+
+            <ImageView
+                    android:id="@+id/thumbnail_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/video_thumnail_default"
+                    />
+
+            <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/history_video_item_progress_height"
+                    android:progress="30"
+                    android:layout_alignParentBottom="true"
+                    style="?android:progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/history_item_progress_bg"
+                    android:max="100"/>
+
+            <TextView
+                    android:id="@+id/duration_tv"
+                    android:layout_width="@dimen/history_video_duration_bg_width"
+                    android:layout_height="@dimen/history_video_duration_bg_height"
+                    android:layout_above="@id/progress"
+                    android:layout_alignRight="@id/thumbnail_iv"
+                    android:textColor="#CBCBCB"
+                    android:gravity="center"
+                    android:background="@drawable/history_duration_bg"
+                    android:text="1:23:06"
+                    android:textSize="@dimen/history_video_item_duration_text_size"/>
+
+            <ImageView
+                    android:id="@+id/density_indicator_iv"
+                    android:layout_width="@dimen/history_video_item_density_icon_width"
+                    android:layout_height="@dimen/history_video_item_density_icon_height"
+                    android:scaleType="fitXY"/>
+
+            <LinearLayout
+                    android:id="@+id/delete_cover_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#80000000"
+                    android:visibility="invisible">
+                <ImageView
+                        android:id="@+id/icon_delete_iv"
+                        android:layout_width="@dimen/history_video_item_delete_icon_width"
+                        android:layout_height="@dimen/history_video_item_delete_icon_height"
+                        android:src="@drawable/icon_cover_delete"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="按ok删除"
+                        android:textSize="@dimen/history_video_item_delete_text_size"
+                        android:textColor="#d7e2e6"
+                        android:layout_marginTop="@dimen/history_video_item_delete_top_margin"
+                        />
+            </LinearLayout>
+
+            <View
+                    android:id="@+id/cover_shadow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+        </RelativeLayout>
+
+        <com.kankan.player.view.MarqueenTextView
+                android:id="@+id/name_tv"
+                android:layout_width="@dimen/history_video_item_cover_text_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/history_video_item_cover_text_margin_top"
+                android:singleLine="true"
+                android:textSize="@dimen/history_video_item_name_text_size"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="#CCCCCC"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:ellipsize="none"
+                />
+    </RelativeLayout>
+</RelativeLayout>

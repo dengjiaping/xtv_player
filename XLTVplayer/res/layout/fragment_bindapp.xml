@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="86dp"
+        android:textSize="26sp"
+        android:textColor="#020e1d"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/guide_tv_bg"
+        android:text="@string/bind_app_way"/>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_step_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/bind_iv"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/guide_download_app"/>
+
+                <TextView
+                    android:id="@+id/device_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="26sp"
+                    android:text="@string/bind_app_device_num"
+                    android:layout_gravity="center_horizontal"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View android:layout_width="1dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:background="#1892de"
+            />
+
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:textColor="#fcfffe"
+                android:layout_marginBottom="18dp"
+                android:text="@string/bind_app_step_one"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="28sp"
+                      android:textColor="#fcfffe"
+                      android:layout_marginBottom="18dp"
+                      android:text="@string/bind_app_step_two"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="28sp"
+                      android:textColor="#fcfffe"
+                      android:layout_marginBottom="18dp"
+                      android:text="@string/bind_app_step_three"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/bind_app_td_bg">
+
+        <ImageView android:id="@+id/download_app_iv"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="24dp"
+            android:src="@drawable/guide_download_app"/>
+
+        <TextView android:layout_width="300dp"
+                  android:layout_height="wrap_content"
+                  android:textSize="26sp"
+                  android:textColor="#fcfffe"
+                  android:layout_toLeftOf="@id/download_app_iv"
+                  android:layout_centerVertical="true"
+                  android:gravity="center"
+                  android:text="@string/bind_app_download_app"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

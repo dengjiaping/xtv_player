@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <!-- 每个item之间的横线 -->
+    <View
+            android:id="@+id/top_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#CCCCCC"
+            android:layout_marginLeft="@dimen/file_item_divider_left_margin"
+            android:layout_marginRight="@dimen/file_item_divider_left_margin"
+            android:visibility="gone"
+            />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/file_item_top_padding"
+            android:paddingBottom="@dimen/file_item_bottom_padding"
+            android:orientation="horizontal"
+            >
+
+        <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/item_file_icon_size"
+                android:layout_height="@dimen/item_file_icon_size"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="@dimen/item_file_icon_margin_left"
+                />
+
+        <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:singleLine="true"
+                android:textSize="@dimen/file_item_name_text_size"
+                android:textColor="#ffffff"
+                android:ellipsize="marquee"
+                android:textStyle="bold"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:layout_gravity="center_vertical"
+                />
+
+        <ImageView
+                android:id="@+id/new_iv"
+                android:layout_width="@dimen/file_item_icon_new_width"
+                android:layout_height="@dimen/file_item_icon_new_height"
+                android:src="@drawable/icon_new"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                android:layout_gravity="center_vertical"/>
+
+        <ImageView
+                android:id="@+id/next"
+                android:layout_width="@dimen/file_item_icon_next_width"
+                android:layout_height="@dimen/file_item_icon_next_height"
+                android:layout_marginRight="@dimen/item_file_arrow_margin_right"
+                android:src="@drawable/right_arrow"
+                android:layout_gravity="center_vertical"
+                />
+
+    </LinearLayout>
+
+    <View
+            android:id="@+id/bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#CCCCCC"
+            android:layout_marginLeft="@dimen/file_item_divider_left_margin"
+            android:layout_marginRight="@dimen/file_item_divider_left_margin"
+            />
+</LinearLayout>

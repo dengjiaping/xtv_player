@@ -1,0 +1,421 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:0.9.+'
+  }
+}
+
+apply plugin: 'android'
+
+
+android {
+  compileSdkVersion 18
+  buildToolsVersion "19.0.3"
+
+  defaultConfig {
+    minSdkVersion 14
+    targetSdkVersion 18
+
+    versionCode = VERSION_MAJOR.toInteger() * 1000 + VERSION_MINOR.toInteger() * 50 + VERSION_PATCH.toInteger()
+    versionName = "${VERSION_MAJOR}.${VERSION_MINOR}"
+    if (!'0'.equals(VERSION_PATCH)) {
+      versionName += ".${VERSION_PATCH}"
+    }
+  }
+
+  dependencies {
+    compile "com.android.support:support-v4:18.0.+"
+    compile fileTree(dir: 'libs', include: '*.jar', exclude: 'android-support-v4.jar')
+
+    compile project(":src_lib:msKit:mslib")
+    compile project(":src_lib:EventBus")
+  }
+
+  signingConfigs {
+    release {
+      storeFile file("thunder_player.keystore")
+      storePassword "thunder12580"
+      keyAlias "thunder_player"
+      keyPassword "thunder12580"
+    }
+  }
+
+  buildTypes {
+    proguard {
+      signingConfig signingConfigs.release
+      zipAlign true
+      debuggable true
+
+      runProguard true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+    }
+
+    debug {
+      signingConfig signingConfigs.release
+      zipAlign true
+      runProguard false
+    }
+
+    release {
+      signingConfig signingConfigs.release
+      runProguard true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_6
+    targetCompatibility JavaVersion.VERSION_1_6
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  packagingOptions {
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/notice.txt'
+    exclude 'META-INF/ASL2.0'
+  }
+
+  sourceSets {
+    main {
+      manifest {
+        srcFile 'AndroidManifest.xml'
+      }
+      java {
+        srcDir 'src'
+      }
+      res {
+        srcDir 'res'
+      }
+      assets {
+        srcDir 'assets'
+      }
+      resources {
+        srcDir 'src'
+      }
+      aidl {
+        srcDir 'src'
+      }
+    }
+  }
+
+  tasks.withType(Compile) {
+    options.encoding = "UTF-8"
+  }
+
+  task copyNativeLibs(type: Copy) {
+    from(new File(project(':').getProjectDir(), 'libs')) { include '**/*.so' }
+    into new File(buildDir, 'native-libs')
+  }
+
+  tasks.withType(Compile) {
+    compileTask -> compileTask.dependsOn copyNativeLibs
+  }
+
+  clean.dependsOn 'cleanCopyNativeLibs'
+
+  tasks.withType(com.android.build.gradle.tasks.PackageApplication) {
+    pkgTask ->
+      pkgTask.jniFolders = new HashSet<File>()
+      pkgTask.jniFolders.add(new File(buildDir, 'native-libs'))
+  }
+
+  productFlavors {
+    Skyworth {
+    }
+    Tcl {
+    }
+    KaiboerQ9 {
+    }
+    KaiboerF5 {
+    }
+    moons{
+    }
+    TocTvassistant {
+    }
+    TocXlrouter {
+    }
+    Haier{
+    }
+    TocTcl{
+    }
+    KonkaTv{
+    }
+    HisenseTv{
+    }
+    HiMedia{
+    }
+    TocQipo{
+    }
+    TocAijia{
+    }
+    TocDangbei{
+    }
+    TocShafa{
+    }
+    TocHefans{
+    }
+    Toc360{
+    }
+    TocHuan{
+    }
+    KonkamAmstar{
+    }
+    TocAndroidS {
+    }
+    TocLetv{
+    }
+    TocTvHome{
+    }
+  }
+}
+
+android.applicationVariants.all { variant ->
+  def packageApplicationOutputFile = variant.packageApplication.outputFile
+  def unalignedFileName = "unaligned/${packageApplicationOutputFile.getName()}"
+  variant.packageApplication.outputFile = new File(packageApplicationOutputFile.parent, unalignedFileName)
+
+  def flavor = variant.productFlavors[0].name
+  def taskSuffix = flavor + buildType.name.substring(0, 1).toUpperCase() + buildType.name.substring(1)
+
+  //方便编译安装运行，例如只需要使用 'gradle rTD', 就可以编译安装并启动Tcl的Debug版本，其他的类似
+  tasks.create(name: 'run' + taskSuffix, type: Exec, dependsOn: 'install' + taskSuffix) {
+    commandLine 'adb', 'shell', 'am', 'start', '-c', 'android.intent.category.LAUNCHER', '-n', 'com.xunlei.tv.player/com.kankan.player.activity.MainActivity'
+  }
+
+  // 替换远程库(不同渠道库不一样)
+  variant.processResources.doFirst {
+    def remoteDir = getRemoteLibDir(flavor)
+    if (remoteDir) {
+      copy {
+        from("${projectDir}/${remoteDir}")
+        into("${buildDir}/res/all/${variant.dirName}/raw")
+      }
+    }
+    def f = file("${buildDir}/res/all/${variant.dirName}/raw/version")
+    def text = "versionCode=$versionCode";
+    f.write(text, 'UTF-8');
+  }
+
+  variant.processManifest.doLast {
+    // 替换友盟key和渠道号
+    def channel = getChannel(variant.productFlavors[0].name)
+
+    copy {
+      from("${buildDir}/manifests/") {
+        include "${variant.dirName}/AndroidManifest.xml"
+      }
+      into("${buildDir}/manifests/${variant.name}")
+
+      filter {
+        String line -> line.replaceAll('\\$CHANNEL', "${channel}")
+      }
+
+      if (!variant.buildType.debuggable) {
+        filter {
+          String line -> line.replaceAll(UMENG_DEBUG_KEY, UMENG_RELEASE_KEY)
+        }
+      } else {
+        filter {
+          String line -> line.replaceAll(UMENG_RELEASE_KEY, UMENG_DEBUG_KEY)
+        }
+      }
+    }
+
+    variant.processResources.manifestFile = file("${buildDir}/manifests/${variant.name}/${variant.dirName}/AndroidManifest.xml")
+  }
+
+  variant.javaCompile.doFirst {
+    changeDebugSettings(variant.buildType.debuggable, variant.productFlavors[0].name)
+  }
+
+  if (variant.buildType.zipAlign) {
+    variant.zipAlign.doFirst {
+      def currentTime = new Date().format('MMddHHmmss')
+      def parent = variant.outputFile.parent
+      def fileName = "XunleiPlayer_TV_v${versionName}_${variant.productFlavors[0].name}_${variant.buildType.name.toUpperCase()}_${currentTime}.apk"
+      variant.outputFile = new File(parent, fileName)
+    }
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.11'
+}
+
+task launchRelease(type: Exec, dependsOn: 'installRelease') {
+  commandLine 'adb', 'shell', 'am', 'start', '-c', 'android.intent.category.LAUNCHER', '-n', 'com.xunlei.tv.player/com.kankan.player.activity.MainActivity'
+}
+
+def getRemoteLibDir(flavor) {
+  "jni/remote/common"
+}
+
+def getChannel(flavor) {
+  if (flavor.equalsIgnoreCase("skyworth")) {
+    "skyworth01"
+  } else if (flavor.equalsIgnoreCase("tcl")) {
+    "tcl01"
+  } else if (flavor.equalsIgnoreCase("xiaomi")) {
+    "xiaomi01"
+  } else if (flavor.equalsIgnoreCase("kaiboerq9")) {
+    "kaiboer01"
+  } else if (flavor.equalsIgnoreCase("kaiboerf5")) {
+    "kaiboer02"
+  } else if(flavor.equalsIgnoreCase("moons")){
+    "moons"
+  } else if (flavor.equalsIgnoreCase("toctvassistant")) {
+    "toC_TVAssistant"
+  } else if (flavor.equalsIgnoreCase("tocxlrouter")) {
+    "toC_xlrouter01"
+  } else if(flavor.equalsIgnoreCase("haier")){
+    "haier01"
+  } else if (flavor.equalsIgnoreCase("toctcl")) {
+    "toC_TCL"
+  } else if (flavor.equalsIgnoreCase("konkatv")) {
+    "KONKAMstar918"
+  } else if (flavor.equalsIgnoreCase("hisensetv")) {
+    "HisenseTV01"
+  } else if (flavor.equalsIgnoreCase("himedia")) {
+    "Himedia01"
+  } else if (flavor.equalsIgnoreCase("tocqipo")) {
+    "toC_7po"
+  } else if (flavor.equalsIgnoreCase("tocaijia")) {
+    "toC_iJia"
+  } else if (flavor.equalsIgnoreCase("tocdangbei")) {
+    "toC_DangBei"
+  } else if (flavor.equalsIgnoreCase("tocshafa")) {
+    "toC_Shafa"
+  } else if (flavor.equalsIgnoreCase("tochefans")) {
+    "toC_hefans"
+  } else if (flavor.equalsIgnoreCase("toc360")) {
+    "toC_360"
+  } else if (flavor.equalsIgnoreCase("tochuan")) {
+    "toC_huan"
+  } else if (flavor.equalsIgnoreCase("konkamamstar")) {
+    "KONKAMstar918"
+  } else if (flavor.equalsIgnoreCase("tocandroids")) {
+    "toC_AndroidS"
+  } else if (flavor.equalsIgnoreCase("tocletv")) {
+    "toC_LETV"
+  } else if (flavor.equalsIgnoreCase("toctvhome")) {
+    "toC_Tvhome"
+  } else {
+    "googleplay"
+  }
+}
+
+//注意返回的字符串需要加上双引号，例如"840"
+def getPartnerId(flavor) {
+  if (flavor.equalsIgnoreCase("skyworth")) {
+    '"830"'
+  } else if (flavor.equalsIgnoreCase("tcl")) {
+    '"840"'
+  } else if (flavor.equalsIgnoreCase("kaiboerq9")) {
+    '"900"'
+  } else if (flavor.equalsIgnoreCase("kaiboerf5")) {
+    '"901"'
+  } else if (flavor.equalsIgnoreCase("moons")) {
+    '"920"'
+  } else if(flavor.equalsIgnoreCase("haier")){
+    '"931"'
+  } else if(flavor.equalsIgnoreCase("himedia")){
+    '"554"'
+  } else {
+    'null'
+  }
+}
+
+//远程又要求license保存在本地了,不放服务器了，然后。。。
+def getLicense(flavor) {
+  if (flavor.equalsIgnoreCase("skyworth")) {
+    '"1405150001000002k000830xje993zkhqfxv6w0t2o"'
+  } else if (flavor.equalsIgnoreCase("tcl")) {
+    '"1406250001000002t000840ol1pbs9fysgjjvoeuw8"'
+  } else if (flavor.equalsIgnoreCase("kaiboerq9")) {
+    '"14071500010000030000900byrhvxvucft930ym9u4"'
+  } else if (flavor.equalsIgnoreCase("kaiboerf5")) {
+    '"14072400010000033000901q9gsizq6sbzm3skaszp"'
+  } else if (flavor.equalsIgnoreCase("moons")) {
+    '"14071700010000031000920gvcg338jdgi4sh4tyt2"'
+  } else if(flavor.equalsIgnoreCase("haier")){
+    '"14072900010000034000931mcg0bs5ujtjqg6ltguh"'
+  } else if(flavor.equalsIgnoreCase("himedia")){
+    '"14081400010000037000554g4lgg9w3bbgc5dbzbgj"'
+  } else {
+    'null'
+  }
+}
+
+def getNtfsType(flavor){
+  if (flavor.equalsIgnoreCase("skyworth")) {
+    '"1"'
+  } else if (flavor.equalsIgnoreCase("tcl")) {
+    '"0"'
+  } else if (flavor.equalsIgnoreCase("toctcl")) {
+    '"0"'
+  } else if (flavor.equalsIgnoreCase("kaiboerq9")) {
+    '"0"'
+  } else if (flavor.equalsIgnoreCase("kaiboerf5")) {
+    '"0"'
+  } else if (flavor.equalsIgnoreCase("moons")) {
+    '"0"'
+  } else if(flavor.equalsIgnoreCase("haier")){
+    '"0"'
+  } else if(flavor.equalsIgnoreCase("himedia")){
+    '"3"'
+  } else {
+    'null'
+  }
+}
+
+
+def changeDebugSettings(debuggable, flavor) {
+  def f = file('src/com/kankan/player/app/AppConfig.java')
+  def text = f.getText('UTF-8')
+
+  def debugPrefix = 'public static final boolean DEBUG = '
+  def remoteDebugPrefix = 'public static final boolean DEBUG_REMOTE = '
+  def openRouterPrefix = 'public static final boolean isForXLRouter = '
+  def openReomteRouterPrefix = 'public static final boolean isRemoteRouterOpen = '
+  def openHardwareAcceleratePrefix = 'public static final boolean OPEN_HARDWARE_ACCELERATE = '
+  def openAdvertisePrefix = 'public static final boolean ADVERTISE_ON = '
+  def partnerIdPrefix = 'public static String PARTNER_ID = '
+  def licensePrefix = 'public static String DEVICE_LICENSE = '
+  def ntfsPrefix = 'public static String NTFS_TYPE = '
+
+  text = replaceFlag(text, debugPrefix, debuggable)
+  text = replaceFlag(text, remoteDebugPrefix, debuggable)
+  text = replaceFlag(text, openRouterPrefix, OPEN_XUNLEI_ROUTER.toBoolean())
+  text = replaceFlag(text, openReomteRouterPrefix, OPEN_REMOTE_ROUTER.toBoolean())
+  text = replaceFlag(text, openHardwareAcceleratePrefix, OPEN_HARDWARE_ACCELERATE.toBoolean())
+  text = replaceFlag(text, openAdvertisePrefix, OPEN_ADVERTISE.toBoolean())
+  text = replaceFlag(text, partnerIdPrefix, getPartnerId(flavor))
+  text = replaceFlag(text, licensePrefix, getLicense(flavor))
+  text = replaceFlag(text, ntfsPrefix,getNtfsType(flavor))
+
+  f.write(text, 'UTF-8')
+}
+
+/*
+ * 用来替换文件中的标志位
+ *
+ * text: 要替换的文本内容
+ * prefix: 替换的标志在java文件中的定义=后面的部分
+ * result: 需要替换的新值
+ */
+
+def replaceFlag(text, prefix, result) {
+  def pattern = ~/${prefix}("?\w+)"?/
+                            def matcher = text =~ pattern
+                            text = matcher.replaceAll(/${prefix}${result}/)
+                            }

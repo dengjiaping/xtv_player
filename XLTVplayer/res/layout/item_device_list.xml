@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:id="@+id/device_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/device_item_padding_left"
+            android:paddingRight="@dimen/device_item_padding_right"
+            android:paddingTop="@dimen/device_item_padding_top"
+            android:paddingBottom="@dimen/device_item_padding_bottom"
+            android:background="@drawable/device_bg"
+            android:duplicateParentState="true">
+
+        <RelativeLayout
+                android:id="@+id/device_rl"
+                android:layout_width="@dimen/device_item_inner_width"
+                android:layout_height="@dimen/device_item_inner_height"
+                >
+
+            <ImageView
+                    android:id="@+id/cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    />
+
+            <ImageView
+                    android:id="@+id/preview_iv"
+                    android:layout_width="@dimen/device_item_history_preview_width"
+                    android:layout_height="@dimen/device_item_history_preview_height"
+                    android:layout_marginTop="@dimen/device_item_icon_top_margin"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    />
+
+            <ImageView
+                android:id="@+id/preview_iv_1"
+                android:layout_width="@dimen/device_item_preview_width"
+                android:layout_height="@dimen/device_item_preview_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/device_item_icon_top_margin"
+                android:visibility="gone"
+                />
+
+            <!-- 如果有历史记录，那么历史记录图标显示在这里，之前的位置显示视频缩略图 -->
+            <ImageView
+                    android:id="@+id/thumbnail_iv"
+                    android:layout_width="@dimen/device_item_history_icon_width"
+                    android:layout_height="@dimen/device_item_history_icon_height"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_history"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:layout_marginRight="@dimen/device_item_history_icon_right_margin"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/device_item_text_bottom_margin"
+                    />
+
+            <com.kankan.player.view.MarqueenTextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/device_item_text_margin"
+                    android:layout_marginRight="@dimen/device_item_text_margin"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="@dimen/device_item_text_bottom_margin"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/device_item_subtitle_text_size"
+                    android:text="移动硬盘"
+                    android:ellipsize="none"
+                    />
+
+            <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/desc"
+                    android:layout_marginLeft="@dimen/device_item_text_margin"
+                    android:layout_marginRight="@dimen/device_item_text_margin"
+                    android:layout_marginTop="3dp"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/device_item_title_text_size"
+                    android:textStyle="bold"
+                    android:text="移动硬盘"
+                    />
+
+            <ImageView android:id="@+id/downloading_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/desc"
+                android:layout_toRightOf="@id/name"
+                android:layout_alignTop="@id/name"
+                android:src="@drawable/downloading"
+                android:visibility="gone"/>
+
+            <TextView
+                    android:id="@+id/count_tv"
+                    android:layout_width="@dimen/device_item_count_text_width"
+                    android:layout_height="@dimen/device_item_count_text_width"
+                    android:background="#e02727"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/name"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/device_item_count_text_size"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    />
+
+            <RelativeLayout android:id="@+id/loading_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#99000000"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <ProgressBar
+                        android:id="@+id/loading_pb"
+                        android:layout_width="@dimen/device_item_loading_iv_size"
+                        android:layout_height="@dimen/device_item_loading_iv_size"
+                        android:layout_centerHorizontal="true"
+                        android:indeterminateDrawable="@drawable/remote_onloading"
+                        />
+
+                    <TextView android:id="@+id/loadingtv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/device_item_loading_tv_margin"
+                        android:textSize="@dimen/device_item_loading_tv_size"
+                        android:textColor="#ffffff"
+                        android:layout_below="@id/loading_pb"
+                        android:text="@string/remote_local_loading"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.kankan.player.view.TopCropImageView
+            android:id="@+id/reflect_iv"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="21dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/device_ll"
+            android:visibility="gone"
+            />
+
+</RelativeLayout>

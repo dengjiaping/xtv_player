@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_main"
+        >
+
+    <LinearLayout
+            android:id="@+id/titlebar_ll"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/file_explore_top_bar_padding_top"
+            >
+
+        <ImageView
+                android:layout_width="@dimen/file_explore_top_bar_back_width"
+                android:layout_height="@dimen/file_explore_top_bar_back_height"
+                android:layout_marginLeft="@dimen/file_explore_top_bar_back_margin_left"
+                android:layout_marginRight="@dimen/file_explore_top_bar_back_margin_right"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_back"/>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/file_explore_top_bar_tille_text_size"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+
+        <ProgressBar
+                android:id="@+id/loading_pb"
+                android:layout_width="@dimen/file_explore_top_bar_progress_size"
+                android:layout_height="@dimen/file_explore_top_bar_progress_size"
+                android:layout_marginLeft="23dp"
+                android:visibility="gone"
+                />
+    </LinearLayout>
+
+    <View
+            android:id="@+id/cover"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/file_list_item_cover_height"
+            android:layout_marginLeft="@dimen/file_explore_list_margin_left"
+            android:layout_marginRight="@dimen/file_explore_list_margin_left"
+            android:background="@drawable/file_item_focused"
+            android:visibility="invisible"
+            />
+
+    <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/file_explore_list_margin_left"
+            android:layout_marginRight="@dimen/file_explore_list_margin_left"
+            android:layout_marginTop="@dimen/file_explore_list_margin_top"
+            android:divider="@null"
+            android:scrollbars="none"
+            android:cacheColorHint="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:layout_below="@id/titlebar_ll"
+            />
+
+    <ImageView
+            android:id="@+id/shadow_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/history_bottom_shadow"
+            android:visibility="gone"/>
+
+
+    <RelativeLayout
+            android:id="@+id/empty_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/empty_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/empty_device"
+                android:layout_centerHorizontal="true"
+                />
+
+        <TextView
+                android:id="@+id/empty_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/empty_icon_iv"
+                android:textSize="@dimen/file_explorer_empty_title_text_size"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:text="现在这里空空如也"/>
+
+        <TextView
+                android:id="@+id/empty_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/file_explorer_empty_subtitle_text_size"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_below="@id/empty_title"
+                android:layout_marginTop="10dp"
+                android:text="@string/local_file_list_empty"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/media_removed_rl"
+            android:layout_width="759dp"
+            android:layout_height="429dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/media_removed_text_bg"
+            android:visibility="gone"
+            >
+
+        <ImageView
+                android:id="@+id/empty_icon_iv2"
+                android:layout_marginTop="62dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_removed_warn"
+                android:layout_centerHorizontal="true"
+                />
+
+        <TextView
+                android:id="@+id/media_removed_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/empty_icon_iv2"
+                android:textSize="30sp"
+                android:textColor="#d8e3e7"
+                android:layout_marginTop="40dp"
+                android:text="U盘/硬盘已拔出，无法查看内容了!"/>
+    </RelativeLayout>
+</RelativeLayout>

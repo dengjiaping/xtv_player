@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/tinker/Workspace/xunlei_project/ThunderTVPlayer/src_lib/msKit/mslib/src/main/assets" />
+        <source path="/Users/tinker/Workspace/xunlei_project/ThunderTVPlayer/src_lib/msKit/mslib/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Users/tinker/Workspace/xunlei_project/ThunderTVPlayer/src_lib/msKit/mslib/src/release/assets" />
+    </dataSet>
+
+</merger>

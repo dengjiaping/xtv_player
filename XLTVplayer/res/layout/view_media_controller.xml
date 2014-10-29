@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/play_transparent_bg">
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/play_control_title_height"
+            android:textSize="@dimen/play_control_title_text_size"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:singleLine="true"
+            android:background="@drawable/play_title_bg"
+            />
+
+    <LinearLayout
+            android:id="@+id/play_controll_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="4dip"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true">
+
+        <ImageView
+                android:id="@+id/prev_iv"
+                android:layout_width="@dimen/play_control_icon_pause_size"
+                android:layout_height="@dimen/play_control_icon_pause_size"
+                android:src="@drawable/play_prev"/>
+
+        <ImageView
+                android:id="@+id/pause_iv"
+                android:layout_width="@dimen/play_control_icon_pause_size"
+                android:layout_height="@dimen/play_control_icon_pause_size"
+                android:src="@drawable/play_pause"
+                android:visibility="gone"/>
+
+        <ImageView
+                android:id="@+id/forward_iv"
+                android:layout_width="@dimen/play_control_icon_pause_size"
+                android:layout_height="@dimen/play_control_icon_pause_size"
+                android:src="@drawable/play_forward"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/process_controll_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/play_control_bottom_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/play_bottom_bg"
+        >
+
+        <com.kankan.player.view.MediaSeekBar
+            android:id="@+id/progress_sb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/seekbar_bg"
+            android:thumb="@drawable/play_seekbar_thum"
+            android:layout_marginBottom="@dimen/play_control_seekbar_margin_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/play_control_seekbar_margin_left"
+            android:layout_marginRight="@dimen/play_control_seekbar_margin_left"
+            />
+
+        <TextView
+            android:id="@+id/current_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/play_control_predicate_text_size"
+            android:layout_above="@id/progress_sb"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="@dimen/play_control_seekbar_tv_margin_left"
+            />
+
+        <TextView
+            android:id="@+id/total_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/play_control_predicate_text_size"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/progress_sb"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="@dimen/play_control_seekbar_tv_margin_left"
+            />
+
+        <TextView
+            android:id="@+id/predicate_time_tv"
+            android:layout_width="@dimen/play_control_icon_predicate_width"
+            android:layout_height="@dimen/play_control_icon_predicate_height"
+            android:textColor="#DEDEDE"
+            android:layout_above="@id/progress_sb"
+            android:background="@drawable/play_time_bg"
+            android:textSize="@dimen/play_control_predicate_text_size"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/play_control_predicate_text_top_padding"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_dark"
+                tools:context=".MainActivity">
+
+
+    <com.kankan.player.view.VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:keepScreenOn="true"
+            android:visibility="gone"/>
+
+    <com.kankan.player.view.SystemVideoView
+            android:id="@+id/system_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:keepScreenOn="true"/>
+
+    <RelativeLayout
+            android:id="@+id/ad_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/ad_iv"
+                android:layout_width="@dimen/play_pause_ad_image_width"
+                android:layout_height="@dimen/play_pause_ad_image_height"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                />
+
+        <ImageView
+                android:id="@+id/adv_pause_iv"
+                android:layout_width="@dimen/play_adv_icon_pause_size"
+                android:layout_height="@dimen/play_adv_icon_pause_size"
+                android:src="@drawable/play_pause"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/play_pause_icon_image_margin"
+                android:layout_marginBottom="@dimen/play_pause_icon_image_margin"
+                />
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/txtSubtitles"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:textSize="@dimen/play_subtitle_text_size"
+            android:layout_marginBottom="@dimen/play_subtitle_margin_bottom"
+            android:textColor="@android:color/white"
+            android:shadowColor="#000000"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"
+            />
+
+    <RelativeLayout
+            android:id="@+id/restart_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/play_tips_restart_margin_bottom"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            >
+
+        <TextView
+                android:id="@+id/restart_tips_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/play_tips_restart_text_height"
+                android:textColor="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/play_tips_message_text_size"
+                android:layout_marginLeft="@dimen/play_tips_restart_text_margin_left"
+                android:paddingLeft="@dimen/play_tips_restart_text_padding_left"
+                android:paddingRight="@dimen/play_tips_restart_text_padding_right"
+                android:background="@drawable/play_tips_bg"
+                android:gravity="right|center_vertical"
+                />
+
+        <ImageView
+                android:id="@+id/restart_indicator_iv"
+                android:layout_width="@dimen/play_tips_restart_icon_width"
+                android:layout_height="@dimen/play_tips_restart_icon_height"
+                android:src="@drawable/play_restart"/>
+
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/tips_msg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/play_tips_message_height"
+            android:textColor="#FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/play_tips_message_margin_bottom"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/play_tips_message_text_size"
+            android:background="@drawable/play_tips_bg"
+            android:gravity="center"
+            android:paddingLeft="@dimen/play_tips_message_padding_left"
+            android:paddingRight="@dimen/play_tips_message_padding_left"
+            android:visibility="gone"
+            />
+
+    <RelativeLayout
+            android:id="@+id/tips_tvassistant_play_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/play_tips_bg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/play_control_title_height"
+            android:visibility="gone">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15px"
+                android:src="@drawable/tips_tvassistant_pay"
+                android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/remote_upper_margintop"
+        android:layout_marginLeft="@dimen/remote_upper_marginleft">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/remote_upper_tv_textsize"
+            android:textColor="#031b3a"
+            android:gravity="center"
+            android:paddingLeft="@dimen/remote_upper_tv_padding"
+            android:paddingRight="@dimen/remote_upper_tv_padding"
+            android:background="@drawable/remote_mobile_tv_bg"/>
+
+    </LinearLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+
+    </HorizontalScrollView>
+
+
+</LinearLayout>

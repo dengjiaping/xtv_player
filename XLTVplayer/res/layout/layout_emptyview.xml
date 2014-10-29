@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/empty_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+        <ImageView
+            android:id="@+id/empty_icon_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty_device"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/empty_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/empty_icon_iv"
+            android:textSize="@dimen/file_explorer_empty_title_text_size"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:text="现在这里空空如也"/>
+
+        <TextView
+            android:id="@+id/empty_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/file_explorer_empty_subtitle_text_size"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_below="@id/empty_title"
+            android:layout_marginTop="10dp"
+            android:text="@string/local_file_list_empty"/>
+    </RelativeLayout>
+</LinearLayout>

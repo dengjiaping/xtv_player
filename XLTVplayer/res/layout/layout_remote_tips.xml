@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/remote_tips_bg"    >
+
+    <LinearLayout
+        android:layout_width="@dimen/bindsucess_width"
+        android:layout_height="@dimen/bindsucess_height"
+        android:layout_centerInParent="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="@dimen/bindsucess_margintop"
+        android:paddingBottom="@dimen/bindsucess_marginbottom"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tips_icon"
+            android:layout_width="@dimen/bindsucess_iv_width"
+            android:layout_height="@dimen/bindsucess_iv_height"
+            android:src="@drawable/remote_tipdialog_bindok"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/bindsucess_tv_textsize"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/bindsucess_tv_margintop"
+            android:text="@string/remote_tips_tv"
+            />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="@dimen/bindsucess_btn_width"
+            android:layout_height="@dimen/bindsucess_btn_height"
+            android:layout_marginTop="@dimen/bindsucess_btn_margintop"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/bindsucess_btn_textsize"
+            android:gravity="center"
+            android:text="@string/remote_tips_btn"
+            android:background="@drawable/remote_btn_bind_bg">
+
+            <requestFocus/>
+        </Button>
+    </LinearLayout>
+
+
+</RelativeLayout>

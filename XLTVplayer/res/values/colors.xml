@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="device_item_bg_focused">#0083d7</drawable>
+    <drawable name="device_item_bg_normal">#00000000</drawable>
+    <drawable name="transparent">#00000000</drawable>
+
+    <color name="play_transparent_bg">#00000000</color>
+    <color name="play_shadow_bg">#AA000000</color>
+
+    <color name="bar_bind_color">#ffffff</color>
+    <color name="bar_unbind_color">#b7bcbe</color>
+</resources>

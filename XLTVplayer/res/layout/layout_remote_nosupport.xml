@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/remote_tips_bg"    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tips_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/reomte_noperfect_support_ic"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="26sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:text="@string/remote_tips_nosupport"
+            />
+
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="left"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:text="@string/remote_tips_btn"
+            android:background="@drawable/remote_btn_bind_bg">
+            <requestFocus/>
+
+        </Button>
+
+
+        <Button
+            android:id="@+id/know"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="right"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:text="@string/remote_tips_btn"
+            android:background="@drawable/remote_btn_bind_bg">
+
+        </Button>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

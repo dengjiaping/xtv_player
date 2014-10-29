@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/container_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/nodownload_rl"
+            android:layout_width="@dimen/downloadentry_bg_width"
+            android:layout_height="@dimen/downloadentry_bg_height"
+            android:layout_marginTop="@dimen/downloadentry_bg_margintop"
+            android:paddingLeft="@dimen/downloadentry_bg_padding"
+            android:paddingRight="@dimen/downloadentry_bg_padding"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/remote_entry_bg">
+
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="@dimen/bindentry_iv_width"
+                android:layout_height="@dimen/bindentry_iv_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/downloaentry_iv_margintop"
+                android:src="@drawable/remote_nodownload"
+                />
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv"
+                android:layout_marginTop="@dimen/downloadentry_tv_marigntop"
+                android:layout_centerHorizontal="true"
+                android:gravity="left"
+                android:singleLine="true"
+                android:textSize="@dimen/downloadentry_tv_textsize_1"
+                android:text="@string/remote_down_tv"/>
+
+            <Button
+                android:id="@+id/btn_down"
+                android:layout_width="300dp"
+                android:layout_height="@dimen/bindsucess_btn_height"
+                android:layout_below="@id/tv"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textColor="#d7e2e4"
+                android:textSize="@dimen/bindsucess_btn_textsize"
+                android:layout_marginTop="@dimen/downloadentry_tv_marigntop"
+                android:text="@string/remote_down_left"
+                android:background="@drawable/remote_btn_bind_bg"/>
+
+            <Button
+                android:id="@+id/btn_failed"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_below="@id/tv"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/downloadentry_tv_textsize_1"
+                android:paddingTop="@dimen/downloadentry_btn_paddingtop"
+                android:paddingBottom="@dimen/downloadentry_btn_paddingtop"
+                android:paddingLeft="@dimen/downloadentry_btn_paddingleft"
+                android:paddingRight="@dimen/downloadentry_btn_paddingleft"
+                android:background="@drawable/remote_btn_bind_bg"/>
+
+        </RelativeLayout>
+
+
+        <ImageView android:id="@+id/nodwon_shadow_iv"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignLeft="@id/nodownload_rl"
+                   android:layout_alignRight="@id/nodownload_rl"
+                   android:layout_below="@id/nodownload_rl"
+                   android:layout_marginTop="@dimen/downloadentry_shadow_margintop"
+                   android:background="@drawable/remote_bind_entry_shadow"/>
+
+        <RelativeLayout
+            android:id="@+id/nodisk_rl"
+            android:layout_width="@dimen/downloadentry_bg_width"
+            android:layout_height="@dimen/downloadentry_bg_height"
+            android:paddingLeft="@dimen/downloadentry_bg_padding"
+            android:paddingRight="@dimen/downloadentry_bg_padding"
+            android:layout_marginTop="@dimen/downloadentry_bg_margintop"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/remote_entry_bg">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="@dimen/bindentry_iv_width"
+                    android:layout_height="@dimen/bindentry_iv_height"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/remote_nodisk"
+                    />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv1"
+                    android:layout_marginTop="@dimen/downloadentry_tv_marigntop"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="left"
+                    android:singleLine="true"
+                    android:textSize="@dimen/downloadentry_tv_textsize_1"
+                    android:text="@string/remote_nodisk_tv"/>
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv1"
+                    android:layout_marginTop="@dimen/downloadentry_tv_marigntop"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="left"
+                    android:textSize="@dimen/downloadentry_tv_textsize_2"
+                    android:text="@string/remote_nodisk_tv2"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView android:id="@+id/nodisc_shadow_iv"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignLeft="@id/nodisk_rl"
+                   android:layout_alignRight="@id/nodisk_rl"
+                   android:layout_below="@id/nodisk_rl"
+                   android:layout_marginTop="@dimen/downloadentry_shadow_margintop"
+                   android:background="@drawable/remote_bind_entry_shadow"/>
+
+    </RelativeLayout>
+</RelativeLayout>

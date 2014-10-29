@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:paddingTop="38dp"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_gravity="left">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginBottom="6dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_back"
+            />
+
+        <View
+            android:id="@+id/dv"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv"
+            android:background="#5d5d5d"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/dv"
+            android:layout_marginLeft="12dp"
+            android:textSize="45sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="@string/main_title"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="30dp">
+
+        <ImageView
+            android:id="@+id/menu_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/actionbar_menu_icon"
+            />
+
+        <TextView
+            android:id="@+id/menu_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/menu_iv"
+            android:layout_marginRight="10dp"
+            android:textSize="33dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="@string/bind_bar_menu_tv"
+            />
+
+        <ImageView
+            android:id="@+id/xunlei_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/menu_tv"
+            />
+
+        <TextView
+            android:id="@+id/status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/xunlei_iv"
+            android:textSize="33dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

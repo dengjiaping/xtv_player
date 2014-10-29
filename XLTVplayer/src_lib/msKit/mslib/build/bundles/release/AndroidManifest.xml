@@ -1,0 +1,9 @@
+<!-- From: file:/Users/tinker/Workspace/xunlei_project/ThunderTVPlayer/src_lib/msKit/mslib/AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.plugin.common.mucslib">
+
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="16"/>
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+    </application>
+
+</manifest>

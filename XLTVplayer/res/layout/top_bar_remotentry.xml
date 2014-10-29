@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="bottom"
+              android:paddingTop="@dimen/top_bar_padding_top"
+              android:paddingLeft="@dimen/top_bar_padding_left">
+
+    <ImageView
+        android:id="@+id/home_up_iv"
+        android:layout_width="@dimen/top_bar_iv_width"
+        android:layout_height="@dimen/top_bar_iv_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_back"
+        android:layout_gravity="center_vertical"
+        />
+
+    <View
+        android:id="@+id/home_divider"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:background="#5d5d5d"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:textSize="@dimen/top_bar_title_text_size"
+        android:textColor="#f3f3f3"
+        android:textStyle="bold"
+        android:text="@string/main_title_1"
+        android:layout_marginBottom="@dimen/top_bar_text_margin_bottom"
+        />
+
+    <TextView
+        android:id="@+id/sub_title_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:textSize="@dimen/top_bar_subtitle_text_size"
+        android:textColor="#b7b7b7"
+        android:textStyle="bold"
+        android:text="共"
+        android:layout_marginBottom="@dimen/top_bar_text_margin_bottom"
+        />
+
+    <TextView
+        android:id="@+id/device_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7.5dp"
+        android:textSize="@dimen/top_bar_subtitle_text_size"
+        android:textColor="#1f87ff"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/top_bar_text_margin_bottom"
+        />
+
+    <TextView
+        android:id="@+id/sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7.5dp"
+        android:textSize="@dimen/top_bar_subtitle_text_size"
+        android:textColor="#b7b7b7"
+        android:textStyle="bold"
+        android:text="个设备"
+        android:layout_marginBottom="@dimen/top_bar_text_margin_bottom"
+        />
+
+    <ProgressBar
+        android:id="@+id/loading_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        />
+
+</LinearLayout>

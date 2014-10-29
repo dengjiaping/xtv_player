@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 比方说有些盒子heightPixels为1008，但是它的View还是按照1080的分辨率来算的，所以不能依赖DisplayMetrics里面取的heightPixels值 -->
+    <dimen name="height_pixels_normal">1080px</dimen>
+
+    <!--topbar-->
+    <dimen name="top_bar_height">138px</dimen>
+    <dimen name="top_bar_padding_top">45px</dimen>
+    <dimen name="top_bar_padding_left">55px</dimen>
+    <dimen name="top_bar_padding_bottom">30px</dimen>
+    <dimen name="top_bar_title_text_size">54px</dimen>
+    <dimen name="top_bar_subtitle_text_size">38px</dimen>
+    <dimen name="top_bar_text_margin_bottom">4px</dimen>
+    <dimen name="top_bar_iv_width">60px</dimen>
+    <dimen name="top_bar_iv_height">60px</dimen>
+
+    <!-- MainActivity -->
+    <dimen name="top_bar_logo_width">80px</dimen>
+    <dimen name="top_bar_logo_height">80px</dimen>
+    <dimen name="device_first_margin_left">188px</dimen>
+    <dimen name="device_margin_left">0px</dimen>
+    <dimen name="device_last_margin_right">20px</dimen>
+    <dimen name="device_margin_right">-68px</dimen>
+    <dimen name="device_item_padding_left">43px</dimen>
+    <dimen name="device_item_padding_top">43px</dimen>
+    <dimen name="device_item_padding_right">43px</dimen>
+    <dimen name="device_item_padding_bottom">43px</dimen>
+    <dimen name="device_item_inner_width">369px</dimen>
+    <dimen name="device_item_inner_height">552px</dimen>
+    <dimen name="device_item_inner_top_margin">266px</dimen>
+    <dimen name="device_item_icon_top_margin">120px</dimen>
+    <dimen name="device_item_icon_left_margin">45px</dimen>
+    <dimen name="device_item_preview_width">181px</dimen>
+    <dimen name="device_item_preview_height">169px</dimen>
+    <dimen name="device_item_title_text_size">40px</dimen>
+    <dimen name="device_item_subtitle_text_size">28px</dimen>
+    <dimen name="device_item_text_margin">27px</dimen>
+    <dimen name="device_item_text_bottom_margin">46px</dimen>
+    <dimen name="device_item_count_text_size">40px</dimen>
+    <dimen name="device_item_count_text_width">67.5px</dimen>
+    <dimen name="device_item_history_icon_right_margin">25px</dimen>
+    <dimen name="device_item_history_icon_width">73px</dimen>
+    <dimen name="device_item_history_icon_height">77px</dimen>
+    <dimen name="device_item_history_preview_width">275px</dimen>
+    <dimen name="device_item_history_preview_height">190px</dimen>
+
+    <!-- File List Activity -->
+    <dimen name="file_explore_top_bar_padding_top">46px</dimen>
+    <dimen name="file_explore_top_bar_back_width">33px</dimen>
+    <dimen name="file_explore_top_bar_back_height">46px</dimen>
+    <dimen name="file_explore_top_bar_back_margin_left">68px</dimen>
+    <dimen name="file_explore_top_bar_back_margin_right">50px</dimen>
+    <dimen name="file_explore_top_bar_tille_text_size">54px</dimen>
+    <dimen name="file_explore_top_bar_progress_size">60px</dimen>
+    <dimen name="file_explore_list_margin_left">68px</dimen>
+    <dimen name="file_explore_list_margin_top">38px</dimen>
+    <dimen name="item_file_icon_size">122px</dimen>
+    <dimen name="item_file_icon_margin_left">68px</dimen>
+    <dimen name="item_file_arrow_margin_right">60px</dimen>
+    <dimen name="file_explorer_empty_title_text_size">42px</dimen>
+    <dimen name="file_explorer_empty_subtitle_text_size">27px</dimen>
+    <dimen name="file_item_height">194px</dimen>
+    <dimen name="file_item_name_text_size">40px</dimen>
+    <dimen name="file_item_icon_next_width">30px</dimen>
+    <dimen name="file_item_icon_next_height">43px</dimen>
+    <dimen name="file_item_icon_new_width">132px</dimen>
+    <dimen name="file_item_icon_new_height">73px</dimen>
+    <dimen name="file_list_icon_empty_width">190px</dimen>
+    <dimen name="file_list_icon_empty_height">202px</dimen>
+    <dimen name="file_list_item_cover_height">206px</dimen>
+    <dimen name="file_list_item_cover_top_margin">20px</dimen>
+    <dimen name="file_item_divider_left_margin">20px</dimen>
+    <dimen name="file_item_top_padding">20px</dimen>
+    <dimen name="file_item_bottom_padding">20px</dimen>
+
+    <!-- History Activity -->
+    <dimen name="history_grid_item_top_margin">45px</dimen>
+    <dimen name="history_grid_item_left_margin">45px</dimen>
+    <dimen name="history_grid_item_bottom_margin">45px</dimen>
+    <dimen name="history_grid_item_right_margin">45px</dimen>
+    <integer name="history_grid_column_count">3</integer>
+    <dimen name="history_top_bar_margin_left">58px</dimen>
+    <dimen name="history_top_bar_title_margin_left">45px</dimen>
+    <dimen name="history_top_bar_padding_top">54px</dimen>
+    <dimen name="history_top_bar_icon_back_width">30px</dimen>
+    <dimen name="history_top_bar_icon_back_height">43px</dimen>
+    <dimen name="history_top_bar_title_text_size">54px</dimen>
+    <dimen name="history_top_bar_menu_text_size">42px</dimen>
+    <dimen name="history_timeline_margin_left">142px</dimen>
+    <dimen name="history_timeline_text_size">33px</dimen>
+    <dimen name="history_timeline_text_margin_top">15px</dimen>
+    <dimen name="history_timeline_width">110px</dimen>
+    <dimen name="history_list_margin_top">68px</dimen>
+    <dimen name="history_clear_all_alert_width">756px</dimen>
+    <dimen name="history_clear_all_alert_height">552px</dimen>
+    <dimen name="history_clear_all_alert_icon_bottom_margin">30px</dimen>
+    <dimen name="history_clear_all_alert_button_left_margin">68px</dimen>
+    <dimen name="history_clear_all_alert_button_height">80px</dimen>
+    <dimen name="history_video_item_width">402px</dimen>
+    <dimen name="history_video_item_height">225px</dimen>
+    <dimen name="history_video_item_padding">10px</dimen>
+    <dimen name="history_video_item_padding_bottom">20px</dimen>
+    <dimen name="history_video_item_cover_width">534px</dimen>
+    <dimen name="history_video_item_cover_height">332px</dimen>
+    <dimen name="history_video_item_cover_text_margin_top">306px</dimen>
+    <dimen name="history_video_item_cover_padding_left">39px</dimen>
+    <dimen name="history_video_item_cover_text_width">420px</dimen>
+    <dimen name="history_grid_margin_left">30px</dimen>
+    <dimen name="history_video_item_progress_height">6px</dimen>
+    <dimen name="history_video_item_name_text_size">32px</dimen>
+    <dimen name="history_video_item_delete_text_size">30px</dimen>
+    <dimen name="history_video_item_delete_top_margin">15px</dimen>
+    <dimen name="history_video_item_duration_text_size">24px</dimen>
+    <dimen name="history_video_duration_bg_width">111px</dimen>
+    <dimen name="history_video_duration_bg_height">39px</dimen>
+    <dimen name="history_video_item_density_icon_width">99px</dimen>
+    <dimen name="history_video_item_density_icon_height">95px</dimen>
+    <dimen name="history_video_item_delete_icon_width">120px</dimen>
+    <dimen name="history_video_item_delete_icon_height">135px</dimen>
+    <dimen name="history_menu_icon_width">71px</dimen>
+    <dimen name="history_menu_icon_height">71px</dimen>
+    <dimen name="history_clear_all_alert_icon_width">175px</dimen>
+    <dimen name="history_clear_all_alert_icon_height">168px</dimen>
+    <dimen name="history_clear_all_alert_text_size">36px</dimen>
+    <dimen name="history_clear_all_alert_bt_text_size">28px</dimen>
+    <dimen name="history_clear_all_alert_bt_width">300px</dimen>
+    <dimen name="history_clear_all_alert_bt_height">120px</dimen>
+
+    <!-- Play Activity -->
+    <dimen name="play_control_icon_pause_size">327px</dimen>
+    <dimen name="play_control_title_height">100px</dimen>
+    <dimen name="play_control_title_text_size">60px</dimen>
+    <dimen name="play_control_title_padding_top">15px</dimen>
+    <dimen name="play_control_bottom_height">165px</dimen>
+    <dimen name="play_control_icon_predicate_width">139px</dimen>
+    <dimen name="play_control_icon_predicate_height">76px</dimen>
+    <dimen name="play_control_predicate_text_top_padding">4px</dimen>
+    <dimen name="play_control_predicate_text_size">32px</dimen>
+    <dimen name="play_control_seekbar_height">79px</dimen>
+    <dimen name="play_control_seekbar_margin_bottom">15px</dimen>
+    <dimen name="play_control_seekbar_margin_left">67px</dimen>
+    <dimen name="play_control_seekbar_tv_margin_left">90px</dimen>
+    <dimen name="play_control_seekbar_thum_size">79px</dimen>
+    <dimen name="submenu_width">224px</dimen>
+    <dimen name="submenu_item_height">120px</dimen>
+    <dimen name="menu_height">120px</dimen>
+    <dimen name="play_menu_width">224px</dimen>
+    <dimen name="play_submenu_width">340px</dimen>
+    <dimen name="play_menu_text_size">36px</dimen>
+    <dimen name="play_menu_subtext_size">30px</dimen>
+    <dimen name="play_menu_subtitle_list_height">480px</dimen>
+    <dimen name="play_menu_icon_size">55px</dimen>
+    <dimen name="play_menu_icon_arrow_width">28px</dimen>
+    <dimen name="play_menu_icon_arrow_height">37px</dimen>
+    <dimen name="play_menu_icon_select_size">35px</dimen>
+    <dimen name="play_tips_message_height">120px</dimen>
+    <dimen name="play_tips_message_text_size">30px</dimen>
+    <dimen name="play_tips_message_padding_left">80px</dimen>
+    <dimen name="play_tips_message_margin_bottom">285px</dimen>
+    <dimen name="play_tips_restart_margin_bottom">170px</dimen>
+    <dimen name="play_tips_restart_icon_width">103px</dimen>
+    <dimen name="play_tips_restart_icon_height">108px</dimen>
+    <dimen name="play_tips_restart_text_margin_left">54px</dimen>
+    <dimen name="play_tips_restart_text_padding_left">60px</dimen>
+    <dimen name="play_tips_restart_text_padding_right">45px</dimen>
+    <dimen name="play_subtitle_text_size">60px</dimen>
+    <dimen name="play_subtitle_margin_bottom">90px</dimen>
+    <dimen name="play_tips_restart_text_height">95px</dimen>
+    <dimen name="play_adv_icon_pause_size">160px</dimen>
+    <dimen name="play_menu_left_padding">45px</dimen>
+    <dimen name="play_pause_ad_image_width">1440px</dimen>
+    <dimen name="play_pause_ad_image_height">810px</dimen>
+    <dimen name="play_pause_icon_image_margin">48px</dimen>
+
+    <!--remote 相关-->
+    <dimen name="bindentry_bg_width">1138px</dimen>
+    <dimen name="bindentry_bg_height">643px</dimen>
+    <dimen name="bindentry_bg_margintop">93px</dimen>
+    <dimen name="bindentry_bg_paddingleft">120px</dimen>
+    <dimen name="bindentry_iv_width">491px</dimen>
+    <dimen name="bindentry_iv_height">230px</dimen>
+    <dimen name="bindentry_iv_marginTop">112px</dimen>
+    <dimen name="bindentry_tv_margintop">53px</dimen>
+    <dimen name="bindentry_tv_text_size">43px</dimen>
+    <dimen name="bindentry_btn_text_size">40px</dimen>
+    <dimen name="bindentry_btn_width">400px</dimen>
+    <dimen name="bindentry_btn_margintop">13px</dimen>
+    <dimen name="bindentry_btn_marginbottom">20px</dimen>
+    <dimen name="bindentry_btn_paddingtop">13px</dimen>
+    <dimen name="bindentry_btn_paddingbottom">13px</dimen>
+    <dimen name="bindentry_btn_paddingleft">53px</dimen>
+    <dimen name="bindentry_btn_paddingright">53px</dimen>
+    <dimen name="bindentry_bg_shadow_margintop">-40px</dimen>
+
+    <!--bindentry downloadentry dialog-->
+    <dimen name="remote_popdialog_left_width">516px</dimen>
+    <dimen name="remote_popdialog_left_height">566px</dimen>
+    <dimen name="remote_popdialog_tv_text_size">36px</dimen>
+    <dimen name="remote_popdialog_tv_margintop">50px</dimen>
+    <dimen name="remote_popdialog_innermargin">-120px</dimen>
+    <dimen name="remote_popdialog_iv_width">280px</dimen>
+    <dimen name="remote_popdialog_iv_heigth">220px</dimen>
+
+    <!--td guide-->
+    <dimen name="remote_guide_item_width_1">520px</dimen>
+    <dimen name="remote_guide_item_height_1">320px</dimen>
+    <dimen name="remote_guide_item_width_2">500px</dimen>
+    <dimen name="remote_guide_item_height_2">460px</dimen>
+    <dimen name="remote_guide_item_firstmargin">130px</dimen>
+
+    <dimen name="remote_scrollview_topmargin_1">256px</dimen>
+    <dimen name="remote_scrollview_topmargin_2">158px</dimen>
+    <dimen name="remote_scrollview_topmargin_3">158px</dimen>
+
+    <!--解绑对话框-->
+    <dimen name="remote_unbind_alert_width">752px</dimen>
+    <dimen name="remote_unbind_alert_height">450px</dimen>
+    <dimen name="remote_unbind_alert_margintop">106px</dimen>
+    <dimen name="remote_unbind_alert_marginbottom">30px</dimen>
+    <dimen name="remote_unbind_alert_textsize_1">40px</dimen>
+    <dimen name="remote_unbind_alert_textsize_2">32px</dimen>
+    <dimen name="remote_unbind_alert_tv_margintop">18px</dimen>
+    <dimen name="remote_unbind_btn_width">330px</dimen>
+    <dimen name="remote_unbind_btn_margintop">30px</dimen>
+    <dimen name="remote_unbind_btn_inner_paddingtop">0px</dimen>
+    <dimen name="remote_unbind_btn_margin">-20px</dimen>
+
+
+    <!--TD guide item-->
+    <dimen name="remote_item_inner_tv_margintop">118px</dimen>
+    <dimen name="remote_item_inner_tv_paddingleft">40px</dimen>
+    <dimen name="remote_item_inner_tv_textsize">38px</dimen>
+    <dimen name="remote_item_inner_tv_textsize2">30px</dimen>
+    <dimen name="remote_item_iv_marginleft">42px</dimen>
+    <dimen name="remote_item_shadow_margintop">-15px</dimen>
+
+    <dimen name="remote_upper_marginleft">130px</dimen>
+    <dimen name="remote_upper_margintop">88px</dimen>
+    <dimen name="remote_upper_">88px</dimen>
+    <dimen name="remote_upper_tv_textsize">45px</dimen>
+    <dimen name="remote_upper_tv_padding">16px</dimen>
+    <dimen name="remote_item_margin">30px</dimen>
+
+
+    <!--downloadentry-->
+    <dimen name="downloadentry_bg_width">1138px</dimen>
+    <dimen name="downloadentry_bg_height">643px</dimen>
+    <dimen name="downloadentry_bg_padding">90px</dimen>
+    <dimen name="downloadentry_bg_margintop">93px</dimen>
+    <dimen name="downloadentry_tv_marigntop">15px</dimen>
+    <dimen name="downloadentry_tv_textsize_1">45px</dimen>
+    <dimen name="downloadentry_tv_textsize_2">40px</dimen>
+    <dimen name="downloadentry_shadow_margintop">-25px</dimen>
+    <dimen name="downloaentry_iv_margintop">75px</dimen>
+    <dimen name="downloadentry_btn_paddingtop">15px</dimen>
+    <dimen name="downloadentry_btn_paddingleft">60px</dimen>
+    <dimen name="downloadentry_iv_width">240px</dimen>
+    <dimen name="downloadentry_iv_height">223px</dimen>
+    <dimen name="downloadentry_btn_width">450px</dimen>
+
+    <!--downlist-->
+    <dimen name="downlist_btn_size">30px</dimen>
+    <dimen name="downlist_iv_marginleft">15px</dimen>
+    <dimen name="downlist_bindbtn_height">180px</dimen>
+
+    <!--绑定成功提示-->
+    <dimen name="bindsucess_width">780px</dimen>
+    <dimen name="bindsucess_height">580px</dimen>
+    <dimen name="bindsucess_margintop">85px</dimen>
+    <dimen name="bindsucess_marginbottom">20px</dimen>
+    <dimen name="bindsucess_iv_width">168px</dimen>
+    <dimen name="bindsucess_iv_height">175px</dimen>
+    <dimen name="bindsucess_tv_margintop">12px</dimen>
+    <dimen name="bindsucess_btn_margintop">30px</dimen>
+    <dimen name="bindsucess_btn_width">400px</dimen>
+    <dimen name="bindsucess_btn_height">120px</dimen>
+    <dimen name="bindsucess_tv_textsize">32px</dimen>
+    <dimen name="bindsucess_btn_textsize">40px</dimen>
+
+    <!--远程 相关actionbar-->
+    <dimen name="actionbar_remote_thunder_iv_size">43px</dimen>
+    <dimen name="actionbar_remote_menu_iv_size">57px</dimen>
+
+    <!--远程入口cover-->
+    <dimen name="device_item_loading_iv_size">140px</dimen>
+    <dimen name="device_item_loading_tv_margin">30px</dimen>
+    <dimen name="device_item_loading_tv_size">28px</dimen>
+
+</resources>

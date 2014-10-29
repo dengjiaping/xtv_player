@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/container_ll"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/upper_tv_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/upper_tv_firstline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#d0d6e8"
+                android:textSize="@dimen/remote_item_inner_tv_textsize"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/upper_tv_secondline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/remote_item_inner_tv_paddingleft"
+                android:textColor="#d0d6e8"
+                android:textSize="@dimen/remote_item_inner_tv_textsize"
+                android:singleLine="true"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upper_tv_ll"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp">
+
+            <RelativeLayout
+                android:id="@+id/inner_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_td_guide_bg"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/iv_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:id="@+id/iv"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/tv_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/remote_item_inner_tv_margintop"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_firstline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#d0d6e8"
+                        android:textSize="@dimen/remote_item_inner_tv_textsize"
+                        android:singleLine="true"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_secondline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#96abb7"
+                        android:textSize="@dimen/remote_item_inner_tv_textsize2"
+                        android:paddingLeft="@dimen/remote_item_inner_tv_paddingleft"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/shadow_bg_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inner_rl"
+                android:layout_marginTop="@dimen/remote_item_shadow_margintop"
+                android:background="@drawable/item_td_guide_shadow"/>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/item_td_guide_next"
+            android:layout_toRightOf="@id/rl"
+            android:layout_marginLeft="@dimen/remote_item_iv_marginleft"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

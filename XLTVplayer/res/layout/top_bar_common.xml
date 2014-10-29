@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:paddingTop="@dimen/history_top_bar_padding_top"
+              >
+
+    <ImageView
+            android:layout_width="@dimen/history_top_bar_icon_back_width"
+            android:layout_height="@dimen/history_top_bar_icon_back_height"
+            android:layout_marginLeft="@dimen/history_top_bar_margin_left"
+            android:src="@drawable/icon_back"
+            />
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/history_top_bar_title_margin_left"
+            android:textSize="@dimen/history_top_bar_title_text_size"
+            android:textColor="#f3f3f3"
+            android:textStyle="bold"
+            android:text="@string/app_name"/>
+
+    <LinearLayout
+            android:id="@+id/menu_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:layout_marginRight="30dp"
+            android:visibility="gone">
+        <ImageView
+                android:id="@+id/menu_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/actionbar_menu_icon"/>
+
+        <TextView
+                android:id="@+id/menu_title_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="@dimen/history_top_bar_menu_text_size"
+                android:text="@string/history_menu_title_main"/>
+    </LinearLayout>
+</LinearLayout>
